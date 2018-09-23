@@ -12,5 +12,10 @@ pipeline {
                 }
             }
         }
+        stage ('Deploy to staging') {
+            steps {
+                build job: 'deploy-to-staging' // It is a function of the pipeline that we can use to trigger a Job in Jenkins
+            }
+        }
     }
 }
